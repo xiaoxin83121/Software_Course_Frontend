@@ -35,8 +35,10 @@ import static com.example.alarmapp.Utils.URLConf.*;
 public class FragmentSettings extends Fragment {
     private Button logout_button = null;
     private Button btn_modinfo = null;
+    private Button about_us = null;
     private EditText et_modname = null;
-    private EditText et_modphone = null;
+    private EditText et_modphone = null;;
+    private EditText et_modemail = null;
     private String modName;
     private String modPhone;
 
@@ -50,6 +52,7 @@ public class FragmentSettings extends Fragment {
         Log.i("Fragment3", "settings");
         logout_button = view.findViewById(R.id.logout_button);
         btn_modinfo = view.findViewById(R.id.btn_modinfo);
+        about_us = view.findViewById(R.id.about_us);
         initEvent();
         return view;
     }
@@ -95,6 +98,7 @@ public class FragmentSettings extends Fragment {
         View view = inflater.inflate(R.layout.infomodify_layout, null);
         et_modname = view.findViewById(R.id.et_name);
         et_modphone = view.findViewById(R.id.et_userphone);
+        et_modemail = view.findViewById(R.id.et_useremail);
         builder.setView(view);
 
         et_modname.addTextChangedListener(new TextWatcher() {
