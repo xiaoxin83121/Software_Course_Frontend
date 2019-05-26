@@ -35,12 +35,12 @@ import static com.example.alarmapp.Utils.URLConf.*;
 public class FragmentSettings extends Fragment {
     private Button logout_button = null;
     private Button btn_modinfo = null;
-    private Button about_us = null;
     private EditText et_modname = null;
-    private EditText et_modphone = null;;
+    private EditText et_modphone = null;
     private EditText et_modemail = null;
     private String modName;
     private String modPhone;
+    private String modEmail;
 
     public FragmentSettings(){
 
@@ -52,7 +52,6 @@ public class FragmentSettings extends Fragment {
         Log.i("Fragment3", "settings");
         logout_button = view.findViewById(R.id.logout_button);
         btn_modinfo = view.findViewById(R.id.btn_modinfo);
-        about_us = view.findViewById(R.id.about_us);
         initEvent();
         return view;
     }
@@ -135,10 +134,27 @@ public class FragmentSettings extends Fragment {
             }
         });
 
+        et_modemail.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                modEmail = editable.toString();
+            }
+        });
+
         builder.setPositiveButton(R.string.confirm, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                String mod_info = "name:"+ modName + "phone:"+modPhone;
+                String mod_info = "name:"+ modName + "phone:"+modPhone + "email"+modEmail;
                 Toast.makeText(getContext(), mod_info, Toast.LENGTH_LONG).show();
                 //调用接口
                 try {
@@ -151,6 +167,7 @@ public class FragmentSettings extends Fragment {
                     Map<String, String> map = new HashMap<String, String>();
                     map.put("new_phone", modPhone);
                     map.put("new_name", modName);
+                    map.put("new_email", modEmail);
                     JSONObject params = new JSONObject(map);
                     JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, url, params,
                             new Response.Listener<JSONObject>() {
@@ -176,7 +193,7 @@ public class FragmentSettings extends Fragment {
                         public Map<String, String> getHeaders() throws AuthFailureError {
                             HashMap<String, String> headers = new HashMap<String, String>();
                             headers.put("Content-Type", "application/json");
-                            headers.put("token", token);
+                            headers.put("Authorization", "Bearer "+token);
                             return headers;
                         }
                     };
