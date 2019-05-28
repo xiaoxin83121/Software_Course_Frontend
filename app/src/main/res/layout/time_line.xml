@@ -9,7 +9,7 @@
         android:layout_width="@dimen/time_line_time"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:text="@string/time"
         android:textColor="@color/time_line_text_color"
         android:textSize="15sp" />

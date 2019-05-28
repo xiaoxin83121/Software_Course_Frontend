@@ -10,17 +10,20 @@
 
     <Spinner
         android:id="@+id/n_sensor_spinner"
+        android:spinnerMode="dropdown"
         style="@style/SpinnerTheme"
         android:layout_width="@dimen/long_spinner_width"
         android:layout_height="@dimen/spinnerpop_height"
-        android:layout_marginTop="76dp"
-        android:layout_marginLeft="@dimen/spinnerpop_listitem_padding"
-        android:layout_marginStart="@dimen/spinnerpop_listitem_padding"
+        android:layout_marginLeft="@dimen/spinnerpop_confirm_margin"
+        android:layout_marginRight="@dimen/spinnerpop_confirm_margin"
+        android:layout_marginTop="@dimen/notification_spinner_vertical_margin"
+        android:padding="@dimen/spinnerpop_listitem_padding"
         android:dropDownWidth="@dimen/long_spinner_width"
         android:entries="@array/sensor_array"
-        android:padding="@dimen/spinnerpop_listitem_padding"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+
+        />
 
     <!--<Button-->
         <!--android:id="@+id/red_sensor_button"-->

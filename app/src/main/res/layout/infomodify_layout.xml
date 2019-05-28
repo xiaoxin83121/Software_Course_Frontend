@@ -112,7 +112,7 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/rl_email"
+        android:id="@+id/srl_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/rl_phone"
@@ -129,7 +129,7 @@
             android:paddingBottom="15dp"
             android:paddingLeft="30dp"
             android:paddingTop="15dp"
-            android:src="@drawable/ic_icon_dmail_36" />
+            android:src="@drawable/ic_icon_dmail" />
 
         <View
             android:id="@+id/viewUserEmail"
@@ -150,10 +150,11 @@
             android:background="@null"
             android:drawablePadding="5dp"
             android:ems="19"
-            android:hint="@string/phone"
+            android:hint="@string/email"
             android:maxLength="20"
             android:textColorHint="@color/colorCursor"
             android:textSize="15sp" />
+
         <View
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
@@ -164,4 +165,5 @@
             android:background="@color/black"
             />
     </RelativeLayout>
+
 </RelativeLayout>
