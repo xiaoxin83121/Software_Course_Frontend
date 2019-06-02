@@ -129,7 +129,7 @@
             android:paddingBottom="15dp"
             android:paddingLeft="30dp"
             android:paddingTop="15dp"
-            android:src="@drawable/ic_icon_dmail" />
+            android:src="@drawable/ic_icon_dmail_36" />
 
         <View
             android:id="@+id/viewUserEmail"

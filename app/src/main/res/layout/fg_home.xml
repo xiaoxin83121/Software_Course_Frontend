@@ -16,7 +16,6 @@
         android:layout_marginLeft="@dimen/user_img_horizontal_margin"
         android:layout_marginTop="@dimen/user_img_vertical_margin"
         android:contentDescription="@string/user_image_description"
-        android:background="#6699FF"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:src="@drawable/user_default" />
