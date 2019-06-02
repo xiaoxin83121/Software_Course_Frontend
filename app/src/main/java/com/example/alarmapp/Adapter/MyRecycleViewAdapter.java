@@ -36,7 +36,7 @@ public class MyRecycleViewAdapter extends RecyclerView.Adapter<MyRecycleViewAdap
         Log.d("test", String.valueOf(ai.getTime()));
         Date date = new Date(ai.getTime()*1000);
         SimpleDateFormat ft = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-        holder.time.setText("时间："+ft.format(date));
+        holder.time.setText(ft.format(date));
         holder.type.setText("类别："+ai.getType());
         holder.pos.setText("位置: "+ai.getPos());
     }
