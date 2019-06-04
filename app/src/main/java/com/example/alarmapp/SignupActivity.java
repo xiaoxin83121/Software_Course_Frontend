@@ -133,8 +133,7 @@ public class SignupActivity extends AppCompatActivity {
     private void signup(){
         //注册
         //密码设置为6为长度以上，用户名不多于20个字符
-        if(username.length() != 0 && userpwd.length() != 0 && confirmpwd.length() != 0
-                && email.length() == 11){
+        if(username.length() != 0 && userpwd.length() != 0 && confirmpwd.length() != 0 ){
             if(userpwd.equals(confirmpwd)){
                 if(userpwd.length() >= 6){
                     //signup
@@ -143,7 +142,7 @@ public class SignupActivity extends AppCompatActivity {
                     final String tag = "json_signup";
                     Map<String, String> map = new HashMap<String, String>();
                     map.put("username", username);
-                    map.put("password", Tools.md5(userpwd));
+                    map.put("password", userpwd);
                     map.put("email", email);
                     JSONObject params = new JSONObject(map);
                     JsonObjectRequest jsonObjectRequest = new JsonObjectRequest( Method.POST ,url, params,
